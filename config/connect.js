@@ -3,7 +3,7 @@ const state = {
   db: null,
 };
 module.exports.connect = function (done) {
-  const url = "mongodb://localhost:27017";
+  const url = "mongodb+srv://fasl:testerfasal@cluster0.lgacnfw.mongodb.net/";
   const dbname = "contactsapp";
 
   mongoClient.connect(url, (err, data) => {
