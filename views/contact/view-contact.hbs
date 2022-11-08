@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-body text-center">
+    <h1>VIEW CONTACTS</h1>
+
+    <a href="/user/dashboard"><button type="button" class="btn btn-dark">Go back</button></a>
+  </div>
+</div>
+<br />
+<br />
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Contact name</th>
+      <th scope="col">Contact number</th>
+      <th scope="col">Contact email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each contacts}}
+      <tr class="table-primary">
+        <td>{{this.name}}</td>
+        <td>{{this.number}}</td>
+        <td>{{this.email}}</td>
+        <td>
+
+          <a href="/user/update-contact/{{this._id}}"><i
+              class="fa fa-edit"
+              style="font-size:20px;color:#00BFFF;"
+            ></i></a>&nbsp;&nbsp;
+          <a href="/user/delete-contact/{{this._id}}"><i
+              class="fa fa-trash"
+              style="font-size:20px;color:red;"
+            ></i></a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

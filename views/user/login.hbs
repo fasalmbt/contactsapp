@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body text-center">
+    <h1>USER LOGIN</h1>
+  </div>
+</div>
+{{#if errors}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{errors}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/if}}
+<div class="login-page">
+  <div class="form">
+    <form method="POST" action="/user/login">
+      <input type="text" placeholder="username" name="username" />
+      <input type="password" placeholder="password" name="password" />
+      <button>Login</button>
+      <p class="message">Not registered? <a href="/user/register">Register now</a></p>
+    </form>
+  </div>
+</div>
