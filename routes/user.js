@@ -40,22 +40,6 @@ router.get('/change-credentials/:id', verify, (req,res)=>{
   res.render('user/change-credentials', {user});
 });
 
-router.get('/export-to-csv', (req,res)=>{
-  db.get().collection(collection.CONTACT_COLLECTION)
-      .find({})
-      .toArray((err, data) => {
-        if (err) throw err;
-        console.log(data);
-        fastcsv
-          .write(data, { headers: true })
-          .on("finish", function() {
-            console.log("svaed successfully!");
-          })
-          .pipe(ws);
-
-      })
-})
-
 router.get('/add-contact',verify, (req,res)=>{
   res.render('contact/add-contact');
 });
