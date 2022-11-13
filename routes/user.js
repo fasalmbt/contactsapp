@@ -4,9 +4,6 @@ const userController = require('../controllers/user');
 const contactController = require('../controllers/contact');
 const collection = require('../config/collection')
 var db = require('../config/connect')
-const fastcsv = require("fast-csv");
-const fs = require("fs");
-const ws = fs.createWriteStream("contacts.csv");
 
 const verify = (req,res,next)=>{
   if(req.session.user){
