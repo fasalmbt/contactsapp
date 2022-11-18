@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=3000 --detectOpenHandles"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -17,9 +16,6 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongodb": "^4.11.0",
-    "morgan": "~1.9.1",
-    "nodemon": "^2.0.20"
+    "morgan": "~1.9.1"
   }
 }
-
-
