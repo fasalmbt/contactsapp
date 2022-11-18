@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=3000 --detectOpenHandles"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "~1.4.4",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-handlebars": "^6.0.6",
@@ -19,3 +21,5 @@
     "nodemon": "^2.0.20"
   }
 }
+
+
