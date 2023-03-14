@@ -1,54 +1,86 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/user/dashboard">Contacts app</a>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/user/dashboard">
+      Contacts app
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
           Settings
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/user/change-credentials/{{user._id}}">Change credentials</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Help</a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/user/change-credentials/{{user._id}}">
+            Change credentials
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Help
+          </a>
         </div>
-      </li>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      {{#if user}}
+      <div class="navbar-item">
+        Hello {{user.username}},
+      </div>
+      <a href="/user/logout" class="navbar-item">
+        <button class="button is-success">
+          Logout
+        </button>
+      </a>
+      {{/if}}
     </div>
   </div>
-  {{#if user}}
-    Hello {{user.username}},
-  {{/if}}
-  &nbsp; &nbsp;
-  <a href="/user/logout" style="text-decoration: none;">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-      Logout
-    </button>
-  </a>
 </nav>
-<br /><br /><br />
-<div class="card-group">
-  <div class="col-md-6">
-    <div class="card border-primary mb-3" style="max-width: 18rem;">
-      <div class="card-header">View contacts</div>
-      <div class="card-body text-dark">
-        <h5 class="card-text">View your saved contacts and cherish relations</h5>
-        <a href="/user/view-contact" class="btn btn-primary">View contacts</a>
+
+<br><br><br>
+
+<div class="columns is-multiline">
+  <div class="column is-half">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          View contacts
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p class="is-size-5">View your saved contacts and cherish relations</p>
+        </div>
       </div>
+      <footer class="card-footer">
+        <a href="/user/view-contact" class="card-footer-item button is-primary">View contacts</a>
+      </footer>
     </div>
   </div>
 
-  <div class="col-md-6">
-    <div class="card border-primary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Add contacts</div>
-      <div class="card-body text-dark">
-        <h5 class="card-text">Save contacts to the eternity</h5>
-        <a href="/user/add-contact" class="btn btn-primary">Add contacts</a>
+  <div class="column is-half">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Add contacts
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p class="is-size-5">Save contacts to the eternity</p>
+        </div>
       </div>
+      <footer class="card-footer">
+        <a href="/user/add-contact" class="card-footer-item button is-primary">Add contacts</a>
+      </footer>
     </div>
   </div>
-
 </div>
