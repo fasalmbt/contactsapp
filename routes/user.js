@@ -57,7 +57,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/user/login');
 });
 
-router.get('/delete-contact/:id', (req, res) => {
+router.get('/delete-contact/:id',isAuthenticatedUser, (req, res) => {
     let conId = req.params.id;
     contactController.deleteContact(conId).then((response) => {
         res.redirect('/user/view-contact');
